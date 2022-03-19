@@ -1,0 +1,31 @@
+{
+  "name": "class-sided",
+  "version": "1.0.0",
+  "description": "Class handler for future upsided bots.",
+  "main": "dist/bots.js",
+  "scripts": {
+    "test": "echo \"Test complete.\"",
+    "try": "nodemon dist/bot.js"
+  },
+  "keywords": [
+    "upsided"
+  ],
+  "author": "upsided",
+  "license": "GNU Public License v3",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@typescript-eslint/type-utils": "^5.14.0",
+    "chalk": "^5.0.1",
+    "discord.js": "^13.6.0",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "tsutils": "^3.21.0",
+    "typedoc": "^0.22.13",
+    "typescript": "*"
+  },
+  "type": "module"
+}

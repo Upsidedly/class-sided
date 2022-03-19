@@ -1,0 +1,22 @@
+{
+  prefix: string,
+  token: string,
+
+  highlight: string,
+
+  events: {
+    path: string,
+    depth: number,
+    excludes: string[]
+  },
+  commands: {
+    path: string,
+    depth: number,
+    excludes: string[]
+  },
+  text: {
+    path: string,
+    depth: number,
+    excludes: string[]
+  }
+}
