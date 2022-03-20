@@ -3,6 +3,7 @@ import { Errorsided } from './errors/errorsided.js';
 import { ConfigData, InitializeOptions } from './types/interfaces.js';
 import MissingConfigInfoError from './errors/missinginfo.js';
 import { read } from './functions/read.js';
+import chalk from 'chalk';
 
 function initialize (options: InitializeOptions) {
   const data = {
@@ -12,8 +13,8 @@ function initialize (options: InitializeOptions) {
 
   try {
     const configExample = read('./CONFIG.txt');
-    const unp = read(`${data.root}/${data.config}.json`);
-    if (!unp) throw new Errorsided('No configuration file found', { cause: new ConfigError('No config.\nPlease create a configuration file in root directory or the directory specified.') })
+    const unp = read(`${data.root}/${data.config}.jsonc`);
+    if (!unp) throw new Errorsided('No configuration file found', { cause: new ConfigError('No config.\nPlease create a configuration file in root directory or the directory specified. The extension used is ' + chalk.bold('jsonc') + ' (JSON-C).') })
     const config = JSON.parse(unp) as ConfigData;
     if (!config.token || !config.text || !config.prefix || !config.highlight || !config.events || !config.commands) {
       throw new Errorsided('Missing information in configuration file.', { cause: new MissingConfigInfoError(`Info missing.\n${configExample}`) })
